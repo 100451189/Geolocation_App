@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>Inemuri App</title>
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.3/dist/leaflet.css"
+    integrity="sha256-kLaT2GOSpHechhsozzB+flnD+zUyjE2LlfWPgU04xyI=" crossorigin="" />
+  <link rel='stylesheet' href='index.css'>
+
+  <!-- Se ha incluido esta libreria para poder importar una imagen svg y usarla como logo en uno de los botones implementados -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+  <!-- Make sure you put this AFTER Leaflet's CSS -->
+  <script src="https://unpkg.com/leaflet@1.9.3/dist/leaflet.js"
+    integrity="sha256-WBkoXOwTeyKclOHuWtc+i2uENFpDZ9YPdf5Hf+D7ewM=" crossorigin="">
+  </script>
+  <link href="index.css" rel="stylesheet" type="text/css" />
+
+</head>
+
+<body>
+  <!-- Nombre de la aplicación sobre el mapa obtenido a traves del uso de leaflet -->
+  <img class="inemuri" src="inemuri.png">
+  <!-- En el mapa se dispone de un boton que posee la caracteristica de devolver al 
+    usuario a su posicion actual, centrandolo en el mapa -->
+  <button id="boton_mi_ubicacion" onclick ="centrar()"><i class="fa-regular fa-compass"></i></button>
+  
+  <div id="sample_map"></div>
+  <!-- Botón de alarma que salta en medio de la pantalla para avisar al usuario.
+    Se desactiva clickando sobre ella -->
+  <button onclick="pararAlarma()" class="custom-button">
+    <img class="alarma" src="alarm.png" alt="Alarma">
+  </button>
+
+  <!-- Botón debajo del mapa usado para personalizar la alarma -->
+  <button id="boton-personalizar" class="botones" onclick="abrirMenu()">Personalizar Alarma</button>
+
+  <div class="popup">
+    <div class="contenido-ventana">
+      <img src="close-button.png" alt="cerrar_boton" class="cerrar" onclick="cerrarPersonalizacion()">
+      <button id="boton_musica" class="botones" onclick="abrirDisplayMusica(), cerrarPersonalizacion(), desaparecerBotonPersonalizacion()">Música de Alarma</button>
+      <button id="boton_distancia" class="botones" onclick="abrirSettingsDistancia(), cerrarPersonalizacion(), desaparecerBotonPersonalizacion()">Configurar Distancia</button>
+    </div>
+  </div>
+
+  <div class="popup_musica">
+    <div id="contenido-ventana-musica">
+      <img src="close-button.png" alt="cerrar_boton" class="cerrar" onclick="cerrarDisplayMusica(), activarBotonPersonalizacion()">
+      <img src="Leroy_Brown.png" id="jim-album-cover" class="album-cover">
+      <button id="seleccion_leroy" class="botones_album" onclick="mensajeSeleccionado(this)">Seleccionar</button>
+      <img src="ACDC-Thunderstruck.png" id="acdc-album-cover" class="album-cover">
+      <button id="seleccion_acdc" class="botones_album" onclick="mensajeSeleccionado(this)">Seleccionar</button>
+      <img src="StillStanding.png" id="elton-album-cover" class="album-cover">
+      <button id="seleccion_elton" class="botones_album" onclick="mensajeSeleccionado(this)">Seleccionar</button>
+    </div>
+  </div>
+
+  <div class="popup_distancia">
+    <div id="ventana_distancia" class="contenido-ventana">
+      <img src="close-button.png" alt="cerrar_boton" class="cerrar" onclick="cerrarSettingsDistancia(), activarBotonPersonalizacion()">
+      <!--Se incluye un bloque para introducir la distancia a la que desea el usuario establecer el radio para que salte la alarma-->
+      <div id="caja_distancia">
+        <label for="bloque_dist">Introduzca los km deseados</label>
+        <input id="km_dist" name="bloque_dist" type="number" placeholder="Cantidad por defecto = 1km">
+      </div>
+    </div>
+  </div>
+
+  <!-- Se importa la biblioteca de jquery para poder hacer uso de ella -->
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script src="script.js"></script>
+
+</body>
+
+</html>
+
+

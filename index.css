@@ -1,0 +1,257 @@
+body {
+  padding: 0;
+  margin: 0;
+  display: flex;
+  justify-content: center;
+}
+
+html, body {
+  height: 100%;
+  background-image: linear-gradient(to top, #a04141, #335c81 30%);
+  border:0;
+}
+
+.inemuri{
+  position: fixed;
+  margin: 4%;
+  margin-left: 8%;
+}
+
+#sample_map{
+  z-index: 0;
+  position: relative;
+  margin-top: 96px;
+  margin-bottom: 16px;
+  margin-left: 16px;
+  margin-right: 16px;
+  height: 80%;
+  width: 85%;
+  border-radius: 3%;
+}
+
+#boton_mi_ubicacion{
+  z-index: 99;
+  position: absolute;
+  font-size: 17px;
+  margin: 5%;
+  top: 85px;
+  right: 35px;
+  background-color: white;
+  color:#250202;
+  border: 1px solid black;
+}
+
+#boton-personalizar{
+  left: 17%;
+  width: 65%;
+  bottom: 2%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#boton_musica{
+  left: 19%;
+  top: 20%;
+  width: 65%;
+}
+
+#boton_distancia{
+  left: 19%;
+  top: 55%;
+  width: 65%;
+}
+
+.botones{
+  z-index: 100;
+  padding: 10px 20px;
+  position: absolute;
+  align-items: center;
+  text-align: center;
+  transition: 0.2s;
+  box-shadow: 6px 6px 20px -4px black;
+  background-color: #335c81;
+  color: white;
+  text-transform: uppercase;
+  font-weight: bolder;
+  font-size: 16px;
+  border-radius: 10px;
+}
+
+.botones:hover{
+  /*El color del fondo del bloque se ve modificado al clickar sobre él*/
+  background-color: #1d364b;
+}
+
+.popup{
+  z-index: 101;
+  position: absolute;
+  margin-top: 96px;
+  margin-bottom: 16px;
+  margin-left: 16px;
+  margin-right: 16px;
+  height: 80%;
+  width: 85%;
+  border-radius: 3%;
+  background: rgba(0,0,0,0.8);
+  display: none;
+  justify-content: center;
+  align-items: center;
+}
+
+.contenido-ventana{
+  z-index: 102;
+  position:relative;
+  height: 45%;
+  width: 70%;
+  background: rgb(190, 186, 186);
+  border-radius: 3%; 
+}
+
+.cerrar{
+  position: absolute;
+  height: 22px;
+  width: 22px;
+  top: -10px;
+  right: -10px;
+}
+
+.popup_musica{
+  z-index: 103;
+  position: absolute;
+  margin-top: 96px;
+  margin-bottom: 16px;
+  margin-left: 16px;
+  margin-right: 16px;
+  height: 80%;
+  width: 85%;
+  border-radius: 3%;
+  background: rgba(0,0,0,0.8);
+  display: none;
+  justify-content: center;
+  align-items: center;
+}
+
+#contenido-ventana-musica{
+  z-index: 104;
+  position:relative;
+  height: 60%;
+  width: 85%;
+  background: rgb(190, 186, 186);
+  border-radius: 3%; 
+  flex-direction: column;
+  align-items: center;
+}
+
+.album-cover {
+  position: absolute;
+  border: 3px solid rgb(138, 120, 41);
+  height: 80px;
+  width: 80px;
+  margin-left: 10%;
+}
+
+.botones_album{
+  z-index: 100;
+  padding: 10px 20px;
+  position: absolute;
+  align-items: center;
+  text-align: center;
+  transition: 0.2s;
+  box-shadow: 6px 6px 20px -4px black;
+  background-color: #335c81;
+  color: white;
+  text-transform: uppercase;
+  font-weight: bolder;
+  font-size: 16px;
+  border-radius: 10px;
+}
+
+#jim-album-cover{
+  margin-top: 10%;
+}
+
+#seleccion_leroy{
+  margin-left: 42%;
+  margin-top: 17%;
+}
+
+#acdc-album-cover{
+  margin-top: 50%;
+}
+
+#seleccion_acdc{
+  margin-left: 42%;
+  margin-top: 57%;
+}
+
+#elton-album-cover{
+  margin-top: 90%;
+}
+
+#seleccion_elton{
+  margin-left: 42%;
+  margin-top: 97%;
+}
+
+.popup_distancia{
+  z-index: 103;
+  position: absolute;
+  margin-top: 96px;
+  margin-bottom: 16px;
+  margin-left: 16px;
+  margin-right: 16px;
+  height: 80%;
+  width: 85%;
+  border-radius: 3%;
+  background: rgba(0,0,0,0.8);
+  display: none;
+  justify-content: center;
+  align-items: center;
+}
+
+#ventana_distancia{
+  height: 30%;
+  width: 80%;
+}
+
+
+#caja_distancia{
+  z-index: 104;
+  position: absolute;
+  padding: 20px 20px;
+  top: 25%;
+  right: 5%;
+  height: 30%;
+  width: 75%;
+  align-items: center;
+  text-align: center;
+  font-weight: bolder;
+  font-size: 16px;
+  color: rgb(255, 255, 255);
+  text-transform: uppercase;
+  background-color: #335c81;
+  box-shadow: 6px 6px 20px -4px black;
+  border: 1.5px solid black;
+  border-radius: 10px;
+}
+
+
+.custom-button {
+  border: none; /* Elimina el borde del botón */
+  background: none; /* Elimina el fondo del botón */
+  padding: 0; /* Elimina cualquier relleno interno */
+}
+
+.alarma{
+  z-index: 500;
+  position: absolute;
+  height: 150px;
+  width: 150px;
+  top: 37%;
+  right: 30%;
+  transition: 0.2s;
+  display:none; /*Inicialmente la alarma no aparece en pantalla hasta que salta*/
+}
+
+
